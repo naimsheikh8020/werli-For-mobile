@@ -1,27 +1,25 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-// Import assets
+
 import logo from "../assets/Group.png";
 import arrowLeft from "../assets/arrow-left.png";
 import google from "../assets/google.png";
-import apple from "../assets/appel.png"; // Renamed for clarity, assuming 'appel' is meant to be 'apple'
+import apple from "../assets/appel.png";
 
 const Login = () => {
     return (
         <div className="min-h-screen bg-black text-white p-6 md:p-10 flex flex-col items-center">
-            {/* Top Navigation/Logo Section */}
+
             <div className='mt-6 w-full max-w-lg flex items-center justify-start'>
-                <Link to="/" className="flex items-center"> {/* Link back to signup or home */}
+                <Link to="/" className="flex items-center">
                     <img src={arrowLeft} alt="Back arrow" className="w-6 h-6 mr-3 cursor-pointer" />
                     <img src={logo} alt="Company Logo" className="h-10" />
                 </Link>
             </div>
 
-            {/* Welcome Back Section */}
             <div className="w-full max-w-lg mt-10 text-center md:text-left">
                 <h1 className="text-4xl font-bold mb-2">Welcome Back!</h1>
-                <p className="text-gray-400 text-lg">Please log in to your account and start the adventure</p>
+                <p className="text-white text-lg">Please log in to your account and start the adventure</p>
             </div>
 
             {/* Login Form */}
@@ -32,8 +30,8 @@ const Login = () => {
                     <input
                         type="email"
                         id="email"
-                        placeholder="Enter your Email or phone number"
-                        className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-lg"
+                        placeholder="Enter your Email"
+                        className="w-full p-4 rounded-xl bg-[#625D5D] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-yellow-400 text-lg"
                     />
                 </div>
 
@@ -44,7 +42,7 @@ const Login = () => {
                         type="password"
                         id="password"
                         placeholder="Enter your password"
-                        className="w-full p-4 rounded-xl bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 text-lg"
+                        className="w-full p-4 rounded-xl bg-[#625D5D] text-white placeholder-white focus:outline-none focus:ring-2 focus:ring-yellow-400 text-lg"
                     />
                 </div>
 
@@ -66,15 +64,17 @@ const Login = () => {
                 </div>
 
                 {/* Log In Button */}
-                <button
-                    type="submit"
-                    className="w-full py-4 rounded-full text-black font-bold text-xl mt-8
-                               bg-gradient-to-r from-[#FBB040] to-[#F9ED32]
-                               hover:from-[#FBB040] hover:to-[#F9ED32] hover:opacity-90
-                               focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-75 transition duration-300"
-                >
-                    Log In
-                </button>
+                <Link to="/otp">
+                    <button
+                        type="submit"
+                        className="w-full py-4 rounded-full text-black font-bold text-xl mt-8
+           bg-gradient-to-r from-[#FBB040] to-[#F9ED32]
+           hover:from-[#FBB040] hover:to-[#F9ED32] hover:opacity-90
+           focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-75 transition duration-300"
+                    >
+                        Log In
+                    </button>
+                </Link>
             </form>
 
             {/* OR Divider */}
