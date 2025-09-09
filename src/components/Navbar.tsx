@@ -1,11 +1,8 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import logo from "../assets/Group.png";
 import search from "../assets/Vector.png";
 import profile from "../assets/Ellipse 6.png";
-
-// Assume the Card component is in a separate file, e.g., Card.jsx
 import Card from './Card';
 
 const Navbar = () => {
