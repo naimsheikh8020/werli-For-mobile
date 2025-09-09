@@ -7,21 +7,20 @@ const OTP = () => {
     const inputs = useRef<(HTMLInputElement | null)[]>([]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>, i: number) => {
-        const value = e.target.value;
-        if (/^\d?$/.test(value)) {
-            const newOtp = [...otp];
-            newOtp[i] = value;
-            setOtp(newOtp);
+        const value = e.target.value.slice(0, 1); 
+        const newOtp = [...otp];
+        newOtp[i] = value.replace(/[^0-9]/g, "");
+        setOtp(newOtp);
 
-            if (value && i < otp.length - 1) {
-                inputs.current[i + 1]?.focus(); // move forward
-            }
+        if (value && i < otp.length - 1) {
+            inputs.current[i + 1]?.focus(); 
         }
     };
 
+
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, i: number) => {
         if (e.key === "Backspace" && otp[i] === "" && i > 0) {
-            inputs.current[i - 1]?.focus(); // go back
+            inputs.current[i - 1]?.focus();
         }
     };
 
@@ -79,7 +78,7 @@ const OTP = () => {
                 {/* Buttons */}
                 <div className="flex space-x-4 w-full">
                     <button
-                        onClick={()=>navigate('/')}
+                        onClick={() => navigate('/')}
                         className="flex-1 py-4 rounded-full text-white font-bold text-xl bg-gray-700 hover:bg-gray-600 transition duration-300">
                         Cancel
                     </button>
